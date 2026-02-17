@@ -55,6 +55,18 @@ const products = [
             { hex: "#d9270f", img: "rose.png" }
             
         ] 
+    },
+
+    { 
+        id: 6, 
+        name: "Sunflower", 
+        category: "keychains", 
+        price: 120, 
+        image: "sunflower.png", 
+        colors: [
+            { hex: "#fdf509", img: "sunflower.png" }
+            
+        ] 
     }
 
 
