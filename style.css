@@ -425,6 +425,9 @@ footer {
 /* --- Responsive --- */
 /* --- Premium Mobile Refinement --- */
 @media (max-width: 850px) {
+
+    /* ---------- Modal ---------- */
+
     .modal-content {
         grid-template-columns: 1fr;
         max-height: 92vh; 
@@ -434,8 +437,8 @@ footer {
     }
     
     .modal-gallery { 
-        height: 45vh; /* Fixed height for the image area to keep it consistent */
-        background: #fdfdfc; /* A soft, warm off-white that feels "artisanal" */
+        height: 45vh;
+        background: #fdfdfc;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -448,13 +451,12 @@ footer {
         max-width: 90%;
         max-height: 90%;
         object-fit: contain;
-        /* Adds a soft shadow so the product looks like it's "floating" in the box */
         filter: drop-shadow(0 10px 15px rgba(0,0,0,0.08));
     }
 
     .modal-details { 
         padding: 32px 24px; 
-        text-align: center; /* Centering text on mobile often looks more balanced */
+        text-align: center;
     }
 
     .modal-title {
@@ -463,40 +465,56 @@ footer {
     }
 
     .color-selector {
-        justify-content: center; /* Center the color dots */
+        justify-content: center;
         margin: 15px 0;
     }
+
+    /* ---------- Footer ---------- */
 
     .footer-grid { 
         grid-template-columns: 1fr 1fr; 
     }
 
-        /* --- Header Mobile Fix --- */
+    /* ---------- Premium Mobile Header ---------- */
 
     .header-wrap {
-        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .brand {
-        gap: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
     }
 
     .brand-logo {
-        height: 42px;   /* slightly smaller logo */
+        height: 34px;
+        width: auto;
     }
 
     .brand-name {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+        font-weight: 600;
     }
 
     .contact-btn {
-        padding: 8px 14px;
-        font-size: 0.8rem;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
     }
 
-    /* Optional: hide text, keep icon only for clean look */
     .contact-btn span {
-        display: none;
+        display: none; /* icon only on mobile */
     }
 
+    .contact-btn svg {
+        width: 18px;
+        height: 18px;
+    }
 }
