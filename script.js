@@ -61,7 +61,7 @@ const products = [
         id: 6, 
         name: "Sunflower", 
         category: "keychains", 
-        price: 120, 
+        price: 130, 
         image: "sunflower.png", 
         colors: [
             { hex: "#fdf509", img: "sunflower.png" }
