@@ -34,7 +34,7 @@ const products = [
         name: "Mini Octopus", 
         category: "keychains", 
         price: 120,
-               mrp: 150,
+        mrp: 120,
         offerNote: "",
         customizable: true,
         image: "bluocto.png", 
