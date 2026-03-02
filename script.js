@@ -67,6 +67,18 @@ const products = [
             { hex: "#fdf509", img: "sunflower.png" }
             
         ] 
+    },
+
+    { 
+        id: 7, 
+        name: "Miffy Keychain", 
+        category: "keychains", 
+        price: 160, 
+        image: "miffy.png", 
+        colors: [
+            { hex: "#8660d8", img: "miffy.png" }
+            
+        ] 
     }
 
 
