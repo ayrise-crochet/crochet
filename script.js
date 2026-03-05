@@ -7,7 +7,7 @@ const products = [
         id: 1, 
         name: "Lily of Valley", 
         category: "bagcharms", 
-        price: 160,
+        price: 170,
         mrp: 200,
         offerNote: "",
         customizable: true,
