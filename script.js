@@ -11,9 +11,9 @@ const products = [
         mrp: 200,
         offerNote: "",
         customizable: true,
-        image: "pinklily.png", 
+        image: "pics/pinklily.png", 
         colors: [
-            { hex: "#ca4dcc", img: "pinklily.png" }
+            { hex: "#e190e3", img: "pics/pinklily.png" }
         ]
     },
     { 
@@ -24,9 +24,9 @@ const products = [
         mrp: 160,
         offerNote: "",
         customizable: false,
-        image: "rosekeychain.png", 
+        image: "pics/rosekeychain.png", 
         colors: [
-            { hex: "#d9270f", img: "rosekeychain.png" }
+            { hex: "#d9270f", img: "pics/rosekeychain.png" }
         ] 
     },
     { 
@@ -37,22 +37,22 @@ const products = [
         mrp: 120,
         offerNote: "",
         customizable: true,
-        image: "bluocto.png", 
+        image: "pics/bluocto.png", 
         colors: [
-            { hex: "#1b87d3", img: "bluocto.png" }
+            { hex: "#3c90cc", img: "pics/bluocto.png" }
         ] 
     },
     { 
         id: 4, 
         name: "Floral scrunchie", 
         category: "hair accessories", 
-        price: 120,
+        price: 100,
         mrp: 120,
         offerNote: "",
         customizable: true,
-        image: "scr.png", 
+        image: "pics/scr5.png", 
         colors: [
-            { hex: "#d9270f", img: "scr.png" }
+            { hex: ["#3ba8e2", "#1049bc"], img: "pics/scr5.png" }
         ] 
     },
     { 
@@ -63,9 +63,9 @@ const products = [
         mrp: 150,
         offerNote: "",
         customizable: false,
-        image: "rose.png", 
+        image: "pics/rose.png", 
         colors: [
-            { hex: "#d9270f", img: "rose.png" }
+            { hex: "#d9270f", img: "pics/rose.png" }
         ] 
     },
     { 
@@ -76,9 +76,9 @@ const products = [
         mrp: 160,
         offerNote: "",
         customizable: false,
-        image: "sunflower.png", 
+        image: "pics/sunflower.png", 
         colors: [
-            { hex: "#fdf509", img: "sunflower.png" }
+            { hex: "#fdf509", img: "pics/sunflower.png" }
         ] 
     },
     { 
@@ -89,11 +89,80 @@ const products = [
         mrp: 200,
         offerNote: "",
         customizable: true,
-        image: "miffy.png", 
+        image: "pics/miffy.png", 
         colors: [
-            { hex: "#8660d8", img: "miffy.png" }
+            { hex: "#9d8ac2", img: "pics/miffy.png" }
         ] 
-    }
+    },
+
+    {id: 8, 
+        name: "Mesh Bow Hair Clip", 
+        category: "hair accessories", 
+        price: 170,
+        mrp: 170,
+        offerNote: "",
+        customizable: false,
+        image: "pics/bow.png", 
+        colors: [
+            { hex: "#9d8ac2", img: "pics/bow.png" }
+        ]
+    },
+    {id: 9, 
+        name: "Pearl Bow Hair Clip", 
+        category: "hair accessories", 
+        price: 150,
+        mrp: 150,
+        offerNote: "",
+        customizable: true,
+        image: "pics/texbow.png", 
+        colors: [
+            { hex: "#e37edc", img: "pics/texbow.png" }
+        ]
+    },
+    {id: 10, 
+        name: "Bloom Hair Tie", 
+        category: "hair accessories", 
+        price: 70,
+        mrp: 80,
+        offerNote: "",
+        customizable: true,
+        image: "pics/rub4.png", 
+        colors: [
+            { hex: ["#faf32c"], img: "pics/rub.png"},
+            {  hex: ["#8660d8"], img: "pics/rub1.png"},
+            {  hex: ["#e276c4"], img: "pics/rub2.png"},
+            {  hex: ["#43b0ec"], img: "pics/rub3.png"},
+            {  hex: ["#ffffff"], img: "pics/rub4.png"}
+        ]
+    },
+    {id: 11, 
+        name: "Tulip Hair Clip", 
+        category: "hair accessories", 
+        price: 70,
+        mrp: 70,
+        offerNote: "",
+        customizable: true,
+        image: "pics/clip.png", 
+        colors: [
+            { hex: "#ffffff", img: "pics/clip.png" }
+        ]
+    },
+    {id: 12, 
+        name: "Scrunchie", 
+        category: "hair accessories", 
+        price: 150,
+        mrp: 150,
+        offerNote: "",
+        customizable: true,
+        image: "pics/scr2.png", 
+        colors: [
+            { hex: "#A52A2A", img: "pics/scr2.png" },
+            { hex: "#f0f330", img: "pics/scr3.png" },
+            { hex: ["#e6282b","#ffffff"], img: "pics/scr4.png" }
+        ]
+    },
+
+    
 ];
 
 let currentFilter = 'all';
@@ -227,7 +296,16 @@ function openModal(p) {
 
         const dot = document.createElement('div');
         dot.className = `color-dot ${i === 0 ? 'selected' : ''}`;
-        dot.style.backgroundColor = c.hex;
+        const dotFill = document.createElement('span');
+        dotFill.className = 'color-dot-fill';
+        const colorHexes = Array.isArray(c.hex) ? c.hex : [c.hex];
+        if (colorHexes.length === 1) {
+            dotFill.style.background = colorHexes[0];
+        } else {
+            dotFill.style.background =
+                `linear-gradient(90deg, ${colorHexes[0]} 50%, ${colorHexes[1]} 50%)`;
+        }
+        dot.appendChild(dotFill);
 
         dot.onclick = (e) => {
             e.stopPropagation();
