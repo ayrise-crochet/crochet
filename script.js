@@ -129,7 +129,7 @@ const products = [
         image: "pics/rub4.png", 
         colors: [
             { hex: ["#faf32c"], img: "pics/rub.png"},
-            {  hex: ["#8660d8"], img: "pics/rub1.png"},
+            {  hex: ["#FFF8DC"], img: "pics/rub1.png"},
             {  hex: ["#e276c4"], img: "pics/rub2.png"},
             {  hex: ["#43b0ec"], img: "pics/rub3.png"},
             {  hex: ["#ffffff"], img: "pics/rub4.png"}
